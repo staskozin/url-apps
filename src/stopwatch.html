@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title id="t"></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link
+    href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDA2OWZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMyIgY2xhc3M9ImZlYXRoZXIgZmVhdGhlci1jbG9jayI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48cGF0aCBkPSJNMTIgNnY2bDQgMiIvPjwvc3ZnPg=="
+    rel="icon" type="image/svg+xml">
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+    }
+
+    pre {
+      font-family: 'Trebuchet MS';
+      font-weight: bold;
+      font-size: 72px;
+      margin: 0 0 20px 0;
+    }
+
+    button {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid rgb(0, 51, 122);
+      box-sizing: border-box;
+      background: none;
+      color: rgb(0, 51, 122);
+      font-size: 28px;
+      padding: 0 0 3px 0;
+      font-family: 'Trebuchet MS';
+    }
+
+    button:disabled {
+      border-color: rgb(153, 153, 153);
+      color: rgb(153, 153, 153);
+    }
+
+    .g {
+      border-color: rgb(0, 97, 37);
+      color: rgb(0, 97, 37);
+    }
+
+    .r {
+      border-color: rgb(155, 6, 14);
+      color: rgb(155, 6, 14);
+    }
+
+    .c {
+      font-size: 0.9em;
+      position: relative;
+      top: -0.1em;
+      font-weight: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <pre id="d"></pre>
+    <div style="display:flex;justify-content:space-between">
+      <button id="r" onclick="rs()" disabled>Reset</button>
+      <button id="s"></button>
+    </div>
+  </div>
+  <script>
+    // reset
+    let rs = () => {
+      sp()
+      p = true
+      o = 0
+      r.disabled = true
+      re()
+      requestAnimationFrame(() => t.textContent = 'Секундомер')
+    }
+
+    // start
+    let st = () => {
+      p = false
+      o -= Date.now()
+
+      s.innerText = 'Stop'
+      s.onclick = sp
+      s.classList.remove('g')
+      s.classList.add('r')
+      r.disabled = false
+
+      re()
+    }
+
+    // stop
+    let sp = () => {
+      p = true
+      o += Date.now()
+      s.innerText = 'Start'
+      s.onclick = st
+      s.classList.remove('r')
+      s.classList.add('g')
+    }
+
+    // format
+    function fo(value, scale, modulo, padding) {
+      value = Math.floor(value / scale) % modulo
+      return value.toString().padStart(padding, 0)
+    }
+
+    // render
+    let re = () => {
+      let value = p ? o : Date.now() + o
+      let text = `${fo(value, 3600000, 60, 2)}<span class="c">:</span>${fo(value, 60000, 60, 2)}<span class="c">:</span>${fo(value, 1000, 60, 2)}`
+      d.innerHTML = text
+      t.textContent = text.replaceAll('<span class="c">:</span>', ':')
+
+      if (!p) {
+        requestAnimationFrame(re)
+      }
+    }
+
+    let o = 0, p = true
+
+    rs()
+  </script>
+</body>
+
+</html>
