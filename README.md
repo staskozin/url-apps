@@ -17,7 +17,7 @@ data:text/html,<html contenteditable>
 
 ### Красивая версия с автофокусом
 ```html
-data:text/html,<head><meta charset=utf-8><title>Блокнот</title><link rel=icon href=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAARVBMVEUAAAAYgDgYgTgYgDgYgDgZgTcXgDgYgDgXgDcYgDcZgDgXgDgZgTcZfzgYgDgZgDcWgTcXgjcYgDgYgDgagDcWgjYYgDgydTSIAAAAFnRSTlMAgHeIwFzRxPL5u6SYl5NmRCDs2zwvpXckaQAAAHdJREFUKM/d0ckOhiAMBOCCAu7Lv8z7P6odUbzUxLPfgTCdEA6Ve8FnC8NyhKBznL6/fywhiEPRtigci1Sp6cPcTLynveBBa6PzVchdBSV9K1ZRA/U7i87THIE4e+pyYWARYOKmqqxn7o+g8wv/EMsADGIaR3lgA+DRET0jU8i0AAAAAElFTkSuQmCC></head><body contenteditable style="line-height:1.5;font-size:20px;font-family:'Fira Sans';width:600px;margin:10px auto;padding:20px;border:1px solid rgb(0,0,0,.3);"><script>setTimeout(() => document.querySelector('body').focus(), 0);</script>
+data:text/html,<head><meta charset=utf-8><title>Блокнот</title><link rel=icon href=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAARVBMVEUAAAAYgDgYgTgYgDgYgDgZgTcXgDgYgDgXgDcYgDcZgDgXgDgZgTcZfzgYgDgZgDcWgTcXgjcYgDgYgDgagDcWgjYYgDgydTSIAAAAFnRSTlMAgHeIwFzRxPL5u6SYl5NmRCDs2zwvpXckaQAAAHdJREFUKM/d0ckOhiAMBOCCAu7Lv8z7P6odUbzUxLPfgTCdEA6Ve8FnC8NyhKBznL6/fywhiEPRtigci1Sp6cPcTLynveBBa6PzVchdBSV9K1ZRA/U7i87THIE4e+pyYWARYOKmqqxn7o+g8wv/EMsADGIaR3lgA+DRET0jU8i0AAAAAElFTkSuQmCC></head><body contenteditable style="line-height:1.5;font-size:20px;font-family:'Trebuchet MS';width:600px;margin:10px auto;padding:20px;border:1px solid rgb(0,0,0,.3);"><script>setTimeout(() => document.querySelector('body').focus(), 0);</script>
 ```
 
 ## Сборка
